@@ -2,8 +2,10 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+#read data
 train_data = pd.read_csv('train.csv')
 
+#data balance
 score_split = train_data.groupby(['score']).count()
 score_split.reset_index(inplace=True)
 score_split = pd.DataFrame(score_split,columns=['score','V2'])
